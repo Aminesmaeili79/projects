@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "JAQ1AAKVoSVHpgT12dFvCrpSJA5wH/mhbwTMyyLA/W0=",
+  "Source": "PaymentAutomation",
+  "BasePath": "_content/PaymentAutomation",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
