@@ -1,0 +1,74 @@
+﻿@model MerchantSafeMVC.Models.MerchantSafeResponseViewModel
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Payment Response</h2>
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th>Order ID</th>
+                        <td>@(Model.OrderId ?? "N/A")</td>
+                    </tr>
+                    <tr>
+                        <th>Group ID</th>
+                        <td>@(Model.GroupId ?? "N/A")</td>
+                    </tr>
+                    <tr>
+                        <th>Response</th>
+                        <td>@(Model.Response ?? "N/A")</td>
+                    </tr>
+                    <tr>
+                        <th>Auth Code</th>
+                        <td>@(Model.AuthCode ?? "N/A")</td>
+                    </tr>
+                    <tr>
+                        <th>Host Reference Number</th>
+                        <td>@(Model.HostRefNum ?? "N/A")</td>
+                    </tr>
+                    <tr>
+                        <th>Process Return Code</th>
+                        <td>@(Model.ProcReturnCode ?? "N/A")</td>
+                    </tr>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <td>@(Model.TransId ?? "N/A")</td>
+                    </tr>
+                    <tr>
+                        <th>Error Message</th>
+                        <td>@(Model.ErrMsg ?? "N/A")</td>
+                    </tr>
+                    @if (Model.Extra != null)
+                    {
+                        <tr class="table-info">
+                            <th colspan="2">Extra Information</th>
+                        </tr>
+                        <tr>
+                            <th>Settle ID</th>
+                            <td>@(Model.Extra.SettleId ?? "N/A")</td>
+                        </tr>
+                        <tr>
+                            <th>Transaction Date</th>
+                            <td>@(Model.Extra.TrxDate ?? "N/A")</td>
+                        </tr>
+                        <tr>
+                            <th>Error Code</th>
+                            <td>@(Model.Extra.ErrorCode ?? "N/A")</td>
+                        </tr>
+                        <tr>
+                            <th>Host Message</th>
+                            <td>@(Model.Extra.HostMsg ?? "N/A")</td>
+                        </tr>
+                        <tr>
+                            <th>Number Code</th>
+                            <td>@(Model.Extra.NumCode ?? "N/A")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <a href="@Url.Action("Index", "MerchantSafe")" class="btn btn-primary">Back to Home</a>
+    </div>
+</div>

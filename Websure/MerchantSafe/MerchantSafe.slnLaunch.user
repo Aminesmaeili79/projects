@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "MerchantSafeAPI\\MerchantSafeAPI.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "MerchantSafeMVC\\MerchantSafeMVC.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

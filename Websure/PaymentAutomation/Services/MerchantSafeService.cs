@@ -2,10 +2,10 @@ using System.Globalization;
 using System.Text;
 using System.Xml;
 using Microsoft.Extensions.Options;
-using PaymentAutomation.Models;
-using PaymentAutomation.Interfaces;
+using PaymentAutomationAPI.Models;
+using PaymentAutomationAPI.Interfaces;
 
-namespace PaymentAutomation.Services
+namespace PaymentAutomationAPI.Services
 {
     public class MerchantSafeService : IMerchantSafeService
     {

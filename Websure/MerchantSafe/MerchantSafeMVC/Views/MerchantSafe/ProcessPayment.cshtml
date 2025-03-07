@@ -1,0 +1,38 @@
+﻿@model MerchantSafeMVC.Models.MerchantSafeRequestViewModel
+@{
+    ViewData["Title"] = "Process Payment";
+}
+
+<h1 class="text-center">Process Payment</h1>
+
+<form asp-controller="MerchantSafe" asp-action="ProcessPayment" method="post" class="container mt-4">
+    <div class="form-group">
+        <label for="SafeKey">Safe Key</label>
+        <input asp-for="SafeKey" class="form-control" id="SafeKey" required />
+        <span asp-validation-for="SafeKey" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Amount">Amount</label>
+        <input asp-for="Amount" class="form-control" id="Amount" required />
+        <span asp-validation-for="Amount" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="numberOfMonths">Number of Months</label>
+        <input type="number" name="numberOfMonths" class="form-control" id="numberOfMonths" min="1" max="60" value="1" required />
+    </div>
+    <div class="form-group">
+        <label for="Currency">Currency</label>
+        <input asp-for="Currency" class="form-control" id="Currency" required />
+        <span asp-validation-for="Currency" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <input asp-for="Description" class="form-control" id="Description" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Process Payment</button>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

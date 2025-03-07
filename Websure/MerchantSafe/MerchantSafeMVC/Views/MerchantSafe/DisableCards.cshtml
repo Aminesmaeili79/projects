@@ -1,0 +1,18 @@
+﻿@model MerchantSafeMVC.Models.MerchantSafeRequestViewModel
+
+<h1 class="text-center">Disable Card</h1>
+
+<form asp-action="DisableCards" method="post" class="container mt-4">
+    <div class="form-group">
+        <label for="SafeKey">Safe Key</label>
+        <input asp-for="SafeKey" class="form-control" id="SafeKey" />
+    </div>
+    <button type="submit" class="btn btn-danger btn-block">Disable Cards</button>
+</form>
+
+@if (ViewData["SafeKey"] != null)
+{
+    <div class="alert alert-info mt-4">
+        <h2>Safe Key: @ViewData["SafeKey"]</h2>
+    </div>
+}

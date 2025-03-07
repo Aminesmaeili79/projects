@@ -1,0 +1,75 @@
+﻿@model MerchantSafeCardDetailsViewModel
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Card Details</h2>
+
+    @if (!string.IsNullOrEmpty(Model.ProcReturnCode) && !string.IsNullOrEmpty(Model.Response))
+    {
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th>Process Return Code</th>
+                            <td>@Model.ProcReturnCode</td>
+                        </tr>
+                        <tr>
+                            <th>Response</th>
+                            <td>@Model.Response</td>
+                        </tr>
+                        <tr>
+                            <th>Label</th>
+                            <td>@Model.Label</td>
+                        </tr>
+                        <tr>
+                            <th>Safe Key Last Modified</th>
+                            <td>@Model.SafeKeyLastModified</td>
+                        </tr>
+                        <tr>
+                            <th>Card Number</th>
+                            <td>@Model.Pan</td>
+                        </tr>
+                        <tr>
+                            <th>Card Status</th>
+                            <td>@Model.PanStatus</td>
+                        </tr>
+                        <tr>
+                            <th>Account Closure Index</th>
+                            <td>@Model.IndexAccountClosure</td>
+                        </tr>
+                        <tr>
+                            <th>Expiry Date</th>
+                            <td>@Model.PanExpiry</td>
+                        </tr>
+                        <tr>
+                            <th>Card Owner</th>
+                            <td>@Model.PanOwner</td>
+                        </tr>
+                        <tr>
+                            <th>Number of Cards</th>
+                            <td>@Model.NumberOfPans</td>
+                        </tr>
+                        <tr>
+                            <th>Index Order</th>
+                            <td>@Model.IndexOrder</td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td>@Model.PanDescription</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            No card details found or invalid response.
+        </div>
+    }
+
+    <div class="text-center mt-4">
+        <a href="@Url.Action("Index", "MerchantSafe")" class="btn btn-primary">Back to Home</a>
+    </div>
+</div>

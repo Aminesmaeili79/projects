@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="container mt-5">
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <a href="/MerchantSafe/AddCard" class="btn btn-primary btn-lg btn-block" role="button">
+                Add Card
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="/MerchantSafe/UpdateCard" class="btn btn-secondary btn-lg btn-block" role="button">
+                Update Card
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="/MerchantSafe/DisableCards" class="btn btn-danger btn-lg btn-block" role="button">
+                Disable Cards
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="/MerchantSafe/GetCards" class="btn btn-success btn-lg btn-block" role="button">
+                Get Cards
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/MerchantSafe/ProcessPayment" class="btn btn-warning btn-lg btn-block" role="button">
+                Process Payment
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn-block {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+
+    .btn-warning {
+        color: white;
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+
+    .btn-warning:hover {
+        color: white;
+        background-color: #e0a800;
+        border-color: #d39e00;
+    }
+</style>
