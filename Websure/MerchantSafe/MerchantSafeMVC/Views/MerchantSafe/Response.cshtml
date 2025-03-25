@@ -1,0 +1,16 @@
+﻿@model MerchantSafeMVC.Models.MerchantSafeResponseViewModel
+
+<h1 class="text-center">Response</h1>
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">Response Details</h2>
+            <p class="card-text"><strong>ProcReturnCode:</strong> @Model.ProcReturnCode</p>
+            <p class="card-text"><strong>Response:</strong> @Model.Response</p>
+            <p class="card-text"><strong>ErrorMessage:</strong> @Model.ErrorMessage</p>
+            <p class="card-text"><strong>TransactionId:</strong> @Model.TransId</p>
+            <p class="card-text"><strong>RawResponse:</strong> @Model.RawResponse</p>
+        </div>
+    </div>
+</div>

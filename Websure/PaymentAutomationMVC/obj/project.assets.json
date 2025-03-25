@@ -1,0 +1,116 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "PaymentAutomationAPI/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/PaymentAutomationAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaymentAutomationAPI.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PaymentAutomationAPI/1.0.0": {
+      "type": "project",
+      "path": "../PaymentAutomation/PaymentAutomationAPI.csproj",
+      "msbuildProject": "../PaymentAutomation/PaymentAutomationAPI.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "PaymentAutomationAPI >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\leet\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\projects\\Websure\\PaymentAutomationMVC\\PaymentAutomationMVC.csproj",
+      "projectName": "PaymentAutomationMVC",
+      "projectPath": "D:\\projects\\Websure\\PaymentAutomationMVC\\PaymentAutomationMVC.csproj",
+      "packagesPath": "C:\\Users\\leet\\.nuget\\packages\\",
+      "outputPath": "D:\\projects\\Websure\\PaymentAutomationMVC\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\leet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "D:\\projects\\Websure\\PaymentAutomation\\PaymentAutomationAPI.csproj": {
+              "projectPath": "D:\\projects\\Websure\\PaymentAutomation\\PaymentAutomationAPI.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.200"
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project PaymentAutomationAPI is not compatible with net8.0 (.NETCoreApp,Version=v8.0). Project PaymentAutomationAPI supports: net9.0 (.NETCoreApp,Version=v9.0)",
+      "libraryId": "PaymentAutomationAPI",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}

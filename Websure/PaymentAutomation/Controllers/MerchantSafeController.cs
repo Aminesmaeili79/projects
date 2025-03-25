@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
-using PaymentAutomation.Interfaces;
-using PaymentAutomation.Models;
+using PaymentAutomationAPI.Interfaces;
+using PaymentAutomationAPI.Models;
 
-namespace PaymentAutomation.Controllers;
+namespace PaymentAutomationAPI.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/[controller]/[action]")]
 public class MerchantSafeController(IMerchantSafeService merchantSafeService) : ControllerBase
 {
     [HttpPost("add-card")]

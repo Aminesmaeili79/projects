@@ -1,0 +1,82 @@
+[
+  {
+    "ContainingType": "PaymentAutomation.Controllers.MerchantSafeController",
+    "Method": "AddCard",
+    "RelativePath": "api/MerchantSafe/add-card",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PaymentAutomation.Models.MerchantSafeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaymentAutomation.Controllers.MerchantSafeController",
+    "Method": "GetCards",
+    "RelativePath": "api/MerchantSafe/cards/{safeKey}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "safeKey",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaymentAutomation.Controllers.MerchantSafeController",
+    "Method": "DisableCards",
+    "RelativePath": "api/MerchantSafe/disable-cards/{safeKey}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "safeKey",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaymentAutomation.Controllers.MerchantSafeController",
+    "Method": "ProcessPayment",
+    "RelativePath": "api/MerchantSafe/process-payment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PaymentAutomation.Models.MerchantSafeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaymentAutomation.Controllers.MerchantSafeController",
+    "Method": "UpdateCard",
+    "RelativePath": "api/MerchantSafe/update-card",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PaymentAutomation.Models.MerchantSafeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,114 @@
+﻿@* MerchantSafeMVC/Views/MerchantSafe/PaymentDistribution.cshtml *@
+@model PaymentDistributionViewModel
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Payment Distribution</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col">
+                    <strong>Total Amount:</strong> @Model.TotalAmount.ToString("C")
+                </div>
+                <div class="col">
+                    <strong>Number of Months:</strong> @Model.NumberOfMonths
+                </div>
+                <div class="col">
+                    <strong>Transaction ID:</strong> @Model.TransactionId
+                </div>
+            </div>
+
+            <form id="distributionForm" method="post" asp-action="SaveDistribution">
+                <input type="hidden" asp-for="TotalAmount" />
+                <input type="hidden" asp-for="TransactionId" />
+                <input type="hidden" asp-for="NumberOfMonths" />
+
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Payment Date</th>
+                            <th>Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (var i = 0; i < Model.MonthlyPayments.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    <input type="hidden" name="MonthlyPayments[@i].PaymentDate" value="@Model.MonthlyPayments[i].PaymentDate.ToString("yyyy-MM-dd")" />
+                                    @Model.MonthlyPayments[i].PaymentDate.ToString("MMMM yyyy")
+                                </td>
+                                <td>
+                                    <input type="number"
+                                           class="form-control payment-amount"
+                                           name="MonthlyPayments[@i].Amount"
+                                           value="@Model.MonthlyPayments[i].Amount"
+                                           step="0.01" />
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-secondary reset-amount">Reset</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Total:</th>
+                            <th><span id="currentTotal">@Model.TotalAmount.ToString("C")</span></th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary" id="saveButton" disabled>Save Distribution</button>
+                    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            const totalAmount = @Json.Serialize(Model.TotalAmount);
+            const originalAmounts = @Json.Serialize(Model.MonthlyPayments.Select(x => x.Amount).ToList());
+
+            function updateTotal() {
+                let currentTotal = 0;
+                $('.payment-amount').each(function() {
+                    currentTotal += parseFloat($(this).val() || 0);
+                });
+
+                $('#currentTotal').text(currentTotal.toLocaleString('en-US', {
+                    style: 'currency',
+                    currency: 'USD'
+                }));
+
+                // Enable/disable save button based on total match
+                $('#saveButton').prop('disabled', Math.abs(currentTotal - totalAmount) > 0.01);
+            }
+
+            $('.payment-amount').on('input', updateTotal);
+
+            $('.reset-amount').click(function() {
+                const index = $(this).closest('tr').index();
+                $(this).closest('tr').find('.payment-amount').val(originalAmounts[index]);
+                updateTotal();
+            });
+
+            $('#distributionForm').submit(function(e) {
+                let currentTotal = 0;
+                $('.payment-amount').each(function() {
+                    currentTotal += parseFloat($(this).val() || 0);
+                });
+
+                if (Math.abs(currentTotal - totalAmount) > 0.01) {
+                    e.preventDefault();
+                    alert('The sum of monthly payments must equal the total payment amount.');
+                }
+            });
+        });
+    </script>
+}

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "RO2pMt+9axRQ9lLGCCodt10OC6p1ASKDUPAbQlVVgs4=",
+  "Source": "MerchantSafeAPI",
+  "BasePath": "_content/MerchantSafeAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -1,0 +1,27 @@
+﻿@model MerchantSafeMVC.Models.MerchantSafeRequestViewModel
+
+<h1 class="text-center">Add Card</h1>
+
+<form asp-action="AddCard" method="post" class="container mt-4">
+    <div class="form-group">
+        <label for="SafeKey">Safe Key</label>
+        <input asp-for="SafeKey" class="form-control" id="SafeKey" />
+    </div>
+    <div class="form-group">
+        <label for="CardNumber">Card Number</label>
+        <input asp-for="CardInfo.Number" class="form-control" id="CardNumber" />
+    </div>
+    <div class="form-group">
+        <label for="Expires">Expires</label>
+        <input asp-for="CardInfo.Expires" class="form-control" id="Expires" />
+    </div>
+    <div class="form-group">
+        <label for="CVV">CVV</label>
+        <input asp-for="CardInfo.Cvv" class="form-control" id="CVV" />
+    </div>
+    <div class="form-group">
+        <label for="CardOwner">Card Owner</label>
+        <input asp-for="CardInfo.CardOwner" class="form-control" id="CardOwner" />
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Add Card</button>
+</form>

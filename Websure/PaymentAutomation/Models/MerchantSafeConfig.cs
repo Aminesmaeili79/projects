@@ -1,4 +1,4 @@
-namespace PaymentAutomation.Models
+namespace PaymentAutomationAPI.Models
 {
     public class MerchantSafeConfig
     {

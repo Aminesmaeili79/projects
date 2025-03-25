@@ -1,6 +1,6 @@
-using PaymentAutomation.Models;
+using PaymentAutomationAPI.Models;
 
-namespace PaymentAutomation.Interfaces
+namespace PaymentAutomationAPI.Interfaces
 {
     public interface IMerchantSafeService
     {
